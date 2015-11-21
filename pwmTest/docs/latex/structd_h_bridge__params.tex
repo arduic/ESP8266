@@ -1,0 +1,64 @@
+\hypertarget{structd_h_bridge__params}{\section{d\-H\-Bridge\-\_\-params Struct Reference}
+\label{structd_h_bridge__params}\index{d\-H\-Bridge\-\_\-params@{d\-H\-Bridge\-\_\-params}}
+}
+
+
+{\ttfamily \#include $<$d\-H\-Bridge.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \hyperlink{structd_h_bridge__params_aa0df512aa34374dd5f8a86b673840e52}{mode}
+\begin{DoxyCompactList}\small\item\em Operation mode of the h\-Bridge. 0=Stop, 1=Left, 2=Right, 3=Forward, 4=Back, Else=Stop. Look at h\-Bridge specs to find what these mean for pin states. \end{DoxyCompactList}\item 
+uint8 \hyperlink{structd_h_bridge__params_ab441c51a14ee588b109512773a2a794d}{left\-Speed}
+\begin{DoxyCompactList}\small\item\em Duty cycle of the left motor 0-\/255 0=off 255=max. \end{DoxyCompactList}\item 
+uint8 \hyperlink{structd_h_bridge__params_ad051173f1232b4056ec2b7c106b9385e}{right\-Speed}
+\begin{DoxyCompactList}\small\item\em Duty cycle of the right motor 0-\/255 0=off 255=max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+structure which represents the state of the double H\-Bridge. Any perticular pin state can be found from the info here. 
+
+Definition at line 32 of file d\-H\-Bridge.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structd_h_bridge__params_ab441c51a14ee588b109512773a2a794d}{\index{d\-H\-Bridge\-\_\-params@{d\-H\-Bridge\-\_\-params}!left\-Speed@{left\-Speed}}
+\index{left\-Speed@{left\-Speed}!dHBridge_params@{d\-H\-Bridge\-\_\-params}}
+\subsubsection[{left\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}uint8 d\-H\-Bridge\-\_\-params\-::left\-Speed}}\label{structd_h_bridge__params_ab441c51a14ee588b109512773a2a794d}
+
+
+Duty cycle of the left motor 0-\/255 0=off 255=max. 
+
+
+
+Definition at line 34 of file d\-H\-Bridge.\-h.
+
+\hypertarget{structd_h_bridge__params_aa0df512aa34374dd5f8a86b673840e52}{\index{d\-H\-Bridge\-\_\-params@{d\-H\-Bridge\-\_\-params}!mode@{mode}}
+\index{mode@{mode}!dHBridge_params@{d\-H\-Bridge\-\_\-params}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8 d\-H\-Bridge\-\_\-params\-::mode}}\label{structd_h_bridge__params_aa0df512aa34374dd5f8a86b673840e52}
+
+
+Operation mode of the h\-Bridge. 0=Stop, 1=Left, 2=Right, 3=Forward, 4=Back, Else=Stop. Look at h\-Bridge specs to find what these mean for pin states. 
+
+
+
+Definition at line 33 of file d\-H\-Bridge.\-h.
+
+\hypertarget{structd_h_bridge__params_ad051173f1232b4056ec2b7c106b9385e}{\index{d\-H\-Bridge\-\_\-params@{d\-H\-Bridge\-\_\-params}!right\-Speed@{right\-Speed}}
+\index{right\-Speed@{right\-Speed}!dHBridge_params@{d\-H\-Bridge\-\_\-params}}
+\subsubsection[{right\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}uint8 d\-H\-Bridge\-\_\-params\-::right\-Speed}}\label{structd_h_bridge__params_ad051173f1232b4056ec2b7c106b9385e}
+
+
+Duty cycle of the right motor 0-\/255 0=off 255=max. 
+
+
+
+Definition at line 35 of file d\-H\-Bridge.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/driver/\hyperlink{d_h_bridge_8h}{d\-H\-Bridge.\-h}\end{DoxyCompactItemize}

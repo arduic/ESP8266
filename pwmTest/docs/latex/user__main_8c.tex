@@ -1,0 +1,121 @@
+\hypertarget{user__main_8c}{\section{user/user\-\_\-main.c File Reference}
+\label{user__main_8c}\index{user/user\-\_\-main.\-c@{user/user\-\_\-main.\-c}}
+}
+{\ttfamily \#include \char`\"{}ets\-\_\-sys.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}osapi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}os\-\_\-type.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mem.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gpio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}user\-\_\-config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}c\-\_\-types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}user\-\_\-interface.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}espconn.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pwm.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}driver/d\-H\-Bridge.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{user__main_8c_a614217d263be1fb1a5f76e2ff7be19a2}{P\-O\-R\-T}~7777
+\item 
+\#define \hyperlink{user__main_8c_a2533774d0ba0505b1b90502bdf8b0c9c}{S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}~1000
+\item 
+\#define \hyperlink{user__main_8c_ad74125223df99954750abebacd84a138}{M\-A\-X\-\_\-\-C\-O\-N\-N\-S}~5
+\item 
+\#define \hyperlink{user__main_8c_a99a8aeb9f036381a1f4b1c1a1e4fe9e4}{M\-A\-X\-\_\-\-F\-R\-A\-M\-E}~2000
+\item 
+\#define \hyperlink{user__main_8c_aebce8e16a2346bacba59caa0ac836186}{proc\-Task\-Prio}~0
+\item 
+\#define \hyperlink{user__main_8c_abebdb7b059bf978d82f86587aea28f37}{proc\-Task\-Queue\-Len}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{user__main_8c_a2137ea4a4e3ad728f0910ad4a7b89d48}{user\-\_\-rf\-\_\-pre\-\_\-init} (void)
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{user__main_8c_a277ffa60e88142c231a14272962e902c}{user\-\_\-init} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+os\-\_\-event\-\_\-t \hyperlink{user__main_8c_a9ce49d1ff8080f58d345c2ccb9ffee39}{proc\-Task\-Queue} \mbox{[}\hyperlink{user__main_8c_abebdb7b059bf978d82f86587aea28f37}{proc\-Task\-Queue\-Len}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{user__main_8c_ad74125223df99954750abebacd84a138}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!M\-A\-X\-\_\-\-C\-O\-N\-N\-S@{M\-A\-X\-\_\-\-C\-O\-N\-N\-S}}
+\index{M\-A\-X\-\_\-\-C\-O\-N\-N\-S@{M\-A\-X\-\_\-\-C\-O\-N\-N\-S}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-C\-O\-N\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-C\-O\-N\-N\-S~5}}\label{user__main_8c_ad74125223df99954750abebacd84a138}
+
+
+Definition at line 17 of file user\-\_\-main.\-c.
+
+\hypertarget{user__main_8c_a99a8aeb9f036381a1f4b1c1a1e4fe9e4}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!M\-A\-X\-\_\-\-F\-R\-A\-M\-E@{M\-A\-X\-\_\-\-F\-R\-A\-M\-E}}
+\index{M\-A\-X\-\_\-\-F\-R\-A\-M\-E@{M\-A\-X\-\_\-\-F\-R\-A\-M\-E}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-F\-R\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-F\-R\-A\-M\-E~2000}}\label{user__main_8c_a99a8aeb9f036381a1f4b1c1a1e4fe9e4}
+
+
+Definition at line 18 of file user\-\_\-main.\-c.
+
+\hypertarget{user__main_8c_a614217d263be1fb1a5f76e2ff7be19a2}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!P\-O\-R\-T@{P\-O\-R\-T}}
+\index{P\-O\-R\-T@{P\-O\-R\-T}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T~7777}}\label{user__main_8c_a614217d263be1fb1a5f76e2ff7be19a2}
+
+
+Definition at line 15 of file user\-\_\-main.\-c.
+
+\hypertarget{user__main_8c_aebce8e16a2346bacba59caa0ac836186}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!proc\-Task\-Prio@{proc\-Task\-Prio}}
+\index{proc\-Task\-Prio@{proc\-Task\-Prio}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{proc\-Task\-Prio}]{\setlength{\rightskip}{0pt plus 5cm}\#define proc\-Task\-Prio~0}}\label{user__main_8c_aebce8e16a2346bacba59caa0ac836186}
+
+
+Definition at line 20 of file user\-\_\-main.\-c.
+
+\hypertarget{user__main_8c_abebdb7b059bf978d82f86587aea28f37}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!proc\-Task\-Queue\-Len@{proc\-Task\-Queue\-Len}}
+\index{proc\-Task\-Queue\-Len@{proc\-Task\-Queue\-Len}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{proc\-Task\-Queue\-Len}]{\setlength{\rightskip}{0pt plus 5cm}\#define proc\-Task\-Queue\-Len~1}}\label{user__main_8c_abebdb7b059bf978d82f86587aea28f37}
+
+
+Definition at line 21 of file user\-\_\-main.\-c.
+
+\hypertarget{user__main_8c_a2533774d0ba0505b1b90502bdf8b0c9c}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-R\-V\-E\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T~1000}}\label{user__main_8c_a2533774d0ba0505b1b90502bdf8b0c9c}
+
+
+Definition at line 16 of file user\-\_\-main.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{user__main_8c_a277ffa60e88142c231a14272962e902c}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!user\-\_\-init@{user\-\_\-init}}
+\index{user\-\_\-init@{user\-\_\-init}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{user\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R user\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{user__main_8c_a277ffa60e88142c231a14272962e902c}
+
+
+Definition at line 55 of file user\-\_\-main.\-c.
+
+\hypertarget{user__main_8c_a2137ea4a4e3ad728f0910ad4a7b89d48}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!user\-\_\-rf\-\_\-pre\-\_\-init@{user\-\_\-rf\-\_\-pre\-\_\-init}}
+\index{user\-\_\-rf\-\_\-pre\-\_\-init@{user\-\_\-rf\-\_\-pre\-\_\-init}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{user\-\_\-rf\-\_\-pre\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void user\-\_\-rf\-\_\-pre\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{user__main_8c_a2137ea4a4e3ad728f0910ad4a7b89d48}
+
+
+Definition at line 31 of file user\-\_\-main.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{user__main_8c_a9ce49d1ff8080f58d345c2ccb9ffee39}{\index{user\-\_\-main.\-c@{user\-\_\-main.\-c}!proc\-Task\-Queue@{proc\-Task\-Queue}}
+\index{proc\-Task\-Queue@{proc\-Task\-Queue}!user_main.c@{user\-\_\-main.\-c}}
+\subsubsection[{proc\-Task\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}os\-\_\-event\-\_\-t proc\-Task\-Queue\mbox{[}{\bf proc\-Task\-Queue\-Len}\mbox{]}}}\label{user__main_8c_a9ce49d1ff8080f58d345c2ccb9ffee39}
+
+
+Definition at line 25 of file user\-\_\-main.\-c.
+

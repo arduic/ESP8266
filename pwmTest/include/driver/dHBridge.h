@@ -1,0 +1,72 @@
+/**
+ * This is a driver for a pair of HBridges that will be driven with PWM. Individual motor control is possible however the pins are still allocated so I advise allocating all in design.
+ * GPIOs for the different parts are as followed.
+ * PWM left = 12, PWM right = 13.
+ * GPIO left 1A = 14, GPIO left 2A = 5.
+ * GPIO right 3A = 4, GPIO right 4A = 2.
+ * Note this configuration requires some clever trick for GPIO2 but it allows UART.
+ */
+#ifndef __dHBridge_H__
+#define __dHBridge_H__
+
+#include "gpio.h"
+#include "pwm.h"
+
+#define PWM_CHANNEL 2	///< Number of PWM being used by PWM driver.
+#define PWM_PERIOD_US 1000	///< Period of the PWM modules. aka 1kHz.
+
+//@{
+/** Here are the GPIOs I'm going to use for PWM and the required definitions. Since GPIO15 is MTDO which is tied to the boot sequence I'm trying to avoid using those pins*/
+#define PWM_0_OUT_IO_MUX PERIPHS_IO_MUX_MTDI_U
+#define PWM_0_OUT_IO_NUM 12
+#define PWM_0_OUT_IO_FUNC  FUNC_GPIO12
+
+#define PWM_1_OUT_IO_MUX PERIPHS_IO_MUX_MTCK_U
+#define PWM_1_OUT_IO_NUM 13
+#define PWM_1_OUT_IO_FUNC  FUNC_GPIO13
+//@}
+
+/**
+ * structure which represents the state of the double HBridge. Any perticular pin state can be found from the info here.
+ */
+typedef struct {
+	uint8 mode;	///< Operation mode of the hBridge. 0=Stop, 1=Left, 2=Right, 3=Forward, 4=Back, Else=Stop. Look at hBridge specs to find what these mean for pin states.
+	uint8 leftSpeed; ///< Duty cycle of the left motor 0-255 0=off 255=max
+	uint8 rightSpeed; ///< Duty cycle of the right motor 0-255 0=off 255=max
+} dHBridge_params;
+
+extern dHBridge_params bridge; ///< There generally are not enough pins for 2 double HBridges driven like this, as such I'm declaring the specs internal. Also this makes passing data back and forth easier. Maybe put in C file not sure.
+
+/**
+ * Initalizes the pair of hBridges. This will set the PWM's to 1kHz with 0 duty cycle, it will also set the mode to be STOP and update the bridge struct.
+ * @warning gpio_init() should not be called before this function, or bad things might happen.
+ * @warning some functions in here say they can only be called once. I don't know what will happen if you try to disobey them.
+ */
+void ICACHE_FLASH_ATTR dHBridge_init();
+
+/**
+ * Sets the mode of the hBridge between the ones defined in the struct. Updates all GPIO output and updates the bridge struct.
+ * @param mode This is the mode to be set. See source code for notes on what each means in my specific configuration.
+ */
+void ICACHE_FLASH_ATTR dHBridge_set_mode(uint8 mode);
+/**
+ * Sets the duty cycle of the hBridge pwms for the left and right side. There is a lot of strange math that the actual PWM call will make but for the caller just pass 0-255 as described in the struct.
+ * @param left speed for the left motor
+ * @param right speed for the right motor
+ */
+void ICACHE_FLASH_ATTR dHBridge_set_speed(uint8 left, uint8 right);
+
+/**
+ * Used to get the current operating state of the PWM's.
+ * @return A pointer to the bridge struct so you can get all the values like the mode and speeds.
+ */
+dHBridge_params * ICACHE_FLASH_ATTR dHBridge_get_info();
+
+/**
+ * Internal static function to convert the duty cycle to one for the ESP SDK.
+ * @param duty Duty cycle the user wants the speed to be as defined by the params struct.
+ * @return Returns the duty cycle that can be used by the set duty pwm call
+ */
+static uint32 ICACHE_FLASH_ATTR dHBridge_conv_duty(uint8 duty);
+
+#endif

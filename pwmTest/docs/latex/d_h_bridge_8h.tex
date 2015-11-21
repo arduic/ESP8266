@@ -1,0 +1,198 @@
+\hypertarget{d_h_bridge_8h}{\section{include/driver/d\-H\-Bridge.h File Reference}
+\label{d_h_bridge_8h}\index{include/driver/d\-H\-Bridge.\-h@{include/driver/d\-H\-Bridge.\-h}}
+}
+{\ttfamily \#include \char`\"{}gpio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pwm.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structd_h_bridge__params}{d\-H\-Bridge\-\_\-params}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{d_h_bridge_8h_acd1dba11989277eab79a76f9f2731bf9}{P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L}~2
+\begin{DoxyCompactList}\small\item\em Number of P\-W\-M being used by P\-W\-M driver. \end{DoxyCompactList}\item 
+\#define \hyperlink{d_h_bridge_8h_a9eab62582ed1f922e9da46272d96944f}{P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S}~1000
+\begin{DoxyCompactList}\small\item\em Period of the P\-W\-M modules. aka 1k\-Hz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{d_h_bridge_8h_a4c254c6d4ed97b2b8966929b2beb5e48}{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}~P\-E\-R\-I\-P\-H\-S\-\_\-\-I\-O\-\_\-\-M\-U\-X\-\_\-\-M\-T\-D\-I\-\_\-\-U
+\item 
+\#define \hyperlink{d_h_bridge_8h_abe91866c0adefe7ad259f3c8de919862}{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}~12
+\item 
+\#define \hyperlink{d_h_bridge_8h_a0cc19fa900a738608bf2c011d792e5d7}{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}~F\-U\-N\-C\-\_\-\-G\-P\-I\-O12
+\item 
+\#define \hyperlink{d_h_bridge_8h_ad62f88b94c5d42b642e8ff835f01017a}{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}~P\-E\-R\-I\-P\-H\-S\-\_\-\-I\-O\-\_\-\-M\-U\-X\-\_\-\-M\-T\-C\-K\-\_\-\-U
+\item 
+\#define \hyperlink{d_h_bridge_8h_a7369fe2097692ff26a7430f5c8ce7ed2}{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}~13
+\item 
+\#define \hyperlink{d_h_bridge_8h_ae9efcf9e2eea82a28ec08077b7d659d4}{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}~F\-U\-N\-C\-\_\-\-G\-P\-I\-O13
+\end{DoxyCompactItemize}
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8h_af5de3d05446f13654fbe63aba9ae09a5}{d\-H\-Bridge\-\_\-init} ()
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8h_a139f811884a6e2deefe2304ccf512d86}{d\-H\-Bridge\-\_\-set\-\_\-mode} (uint8 mode)
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8h_acd199ef860af11d724ef1ce8d9ebed53}{d\-H\-Bridge\-\_\-set\-\_\-speed} (uint8 left, uint8 right)
+\item 
+\hyperlink{structd_h_bridge__params}{d\-H\-Bridge\-\_\-params} $\ast$I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8h_ab635bce01a77439b5f7b292c49532482}{d\-H\-Bridge\-\_\-get\-\_\-info} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structd_h_bridge__params}{d\-H\-Bridge\-\_\-params} \hyperlink{d_h_bridge_8h_a036e5e08e01e2cc8f7a700c3f91d36c2}{bridge}
+\begin{DoxyCompactList}\small\item\em There generally are not enough pins for 2 double H\-Bridges driven like this, as such I'm declaring the specs internal. Also this makes passing data back and forth easier. Maybe put in C file not sure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{d_h_bridge_8h_a0cc19fa900a738608bf2c011d792e5d7}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C@{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}}
+\index{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C@{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C~F\-U\-N\-C\-\_\-\-G\-P\-I\-O12}}\label{d_h_bridge_8h_a0cc19fa900a738608bf2c011d792e5d7}
+
+
+Definition at line 22 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_a4c254c6d4ed97b2b8966929b2beb5e48}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X@{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}}
+\index{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X@{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X~P\-E\-R\-I\-P\-H\-S\-\_\-\-I\-O\-\_\-\-M\-U\-X\-\_\-\-M\-T\-D\-I\-\_\-\-U}}\label{d_h_bridge_8h_a4c254c6d4ed97b2b8966929b2beb5e48}
+Here are the G\-P\-I\-Os I'm going to use for P\-W\-M and the required definitions. Since G\-P\-I\-O15 is M\-T\-D\-O which is tied to the boot sequence I'm trying to avoid using those pins 
+
+Definition at line 20 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_abe91866c0adefe7ad259f3c8de919862}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M@{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}}
+\index{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M@{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-0\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M~12}}\label{d_h_bridge_8h_abe91866c0adefe7ad259f3c8de919862}
+
+
+Definition at line 21 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_ae9efcf9e2eea82a28ec08077b7d659d4}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C@{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}}
+\index{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C@{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-F\-U\-N\-C~F\-U\-N\-C\-\_\-\-G\-P\-I\-O13}}\label{d_h_bridge_8h_ae9efcf9e2eea82a28ec08077b7d659d4}
+
+
+Definition at line 26 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_ad62f88b94c5d42b642e8ff835f01017a}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X@{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}}
+\index{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X@{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-M\-U\-X~P\-E\-R\-I\-P\-H\-S\-\_\-\-I\-O\-\_\-\-M\-U\-X\-\_\-\-M\-T\-C\-K\-\_\-\-U}}\label{d_h_bridge_8h_ad62f88b94c5d42b642e8ff835f01017a}
+
+
+Definition at line 24 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_a7369fe2097692ff26a7430f5c8ce7ed2}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M@{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}}
+\index{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M@{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-1\-\_\-\-O\-U\-T\-\_\-\-I\-O\-\_\-\-N\-U\-M~13}}\label{d_h_bridge_8h_a7369fe2097692ff26a7430f5c8ce7ed2}
+
+
+Definition at line 25 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_acd1dba11989277eab79a76f9f2731bf9}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L@{P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L}}
+\index{P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L@{P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-\-C\-H\-A\-N\-N\-E\-L~2}}\label{d_h_bridge_8h_acd1dba11989277eab79a76f9f2731bf9}
+
+
+Number of P\-W\-M being used by P\-W\-M driver. 
+
+This is a driver for a pair of H\-Bridges that will be driven with P\-W\-M. Individual motor control is possible however the pins are still allocated so I advise allocating all in design. G\-P\-I\-Os for the different parts are as followed. P\-W\-M left = 12, P\-W\-M right = 13. G\-P\-I\-O left 1\-A = 14, G\-P\-I\-O left 2\-A = 5. G\-P\-I\-O right 3\-A = 4, G\-P\-I\-O right 4\-A = 2. Note this configuration requires some clever trick for G\-P\-I\-O2 but it allows U\-A\-R\-T. 
+
+Definition at line 15 of file d\-H\-Bridge.\-h.
+
+\hypertarget{d_h_bridge_8h_a9eab62582ed1f922e9da46272d96944f}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S@{P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S}}
+\index{P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S@{P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-W\-M\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-U\-S~1000}}\label{d_h_bridge_8h_a9eab62582ed1f922e9da46272d96944f}
+
+
+Period of the P\-W\-M modules. aka 1k\-Hz. 
+
+
+
+Definition at line 16 of file d\-H\-Bridge.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{d_h_bridge_8h_ab635bce01a77439b5f7b292c49532482}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!d\-H\-Bridge\-\_\-get\-\_\-info@{d\-H\-Bridge\-\_\-get\-\_\-info}}
+\index{d\-H\-Bridge\-\_\-get\-\_\-info@{d\-H\-Bridge\-\_\-get\-\_\-info}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{d\-H\-Bridge\-\_\-get\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf d\-H\-Bridge\-\_\-params}$\ast$ I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-get\-\_\-info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8h_ab635bce01a77439b5f7b292c49532482}
+Used to get the current operating state of the P\-W\-M's. \begin{DoxyReturn}{Returns}
+A pointer to the bridge struct so you can get all the values like the mode and speeds. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file d\-H\-Bridge.\-c.
+
+\hypertarget{d_h_bridge_8h_af5de3d05446f13654fbe63aba9ae09a5}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!d\-H\-Bridge\-\_\-init@{d\-H\-Bridge\-\_\-init}}
+\index{d\-H\-Bridge\-\_\-init@{d\-H\-Bridge\-\_\-init}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{d\-H\-Bridge\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8h_af5de3d05446f13654fbe63aba9ae09a5}
+Initalizes the pair of h\-Bridges. This will set the P\-W\-M's to 1k\-Hz with 0 duty cycle, it will also set the mode to be S\-T\-O\-P and update the bridge struct. \begin{DoxyWarning}{Warning}
+gpio\-\_\-init() should not be called before this function, or bad things might happen. 
+
+some functions in here say they can only be called once. I don't know what will happen if you try to disobey them. 
+\end{DoxyWarning}
+
+
+Definition at line 13 of file d\-H\-Bridge.\-c.
+
+\hypertarget{d_h_bridge_8h_a139f811884a6e2deefe2304ccf512d86}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!d\-H\-Bridge\-\_\-set\-\_\-mode@{d\-H\-Bridge\-\_\-set\-\_\-mode}}
+\index{d\-H\-Bridge\-\_\-set\-\_\-mode@{d\-H\-Bridge\-\_\-set\-\_\-mode}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{d\-H\-Bridge\-\_\-set\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-set\-\_\-mode (
+\begin{DoxyParamCaption}
+\item[{uint8}]{mode}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8h_a139f811884a6e2deefe2304ccf512d86}
+Sets the mode of the h\-Bridge between the ones defined in the struct. Updates all G\-P\-I\-O output and updates the bridge struct. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & This is the mode to be set. See source code for notes on what each means in my specific configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file d\-H\-Bridge.\-c.
+
+\hypertarget{d_h_bridge_8h_acd199ef860af11d724ef1ce8d9ebed53}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!d\-H\-Bridge\-\_\-set\-\_\-speed@{d\-H\-Bridge\-\_\-set\-\_\-speed}}
+\index{d\-H\-Bridge\-\_\-set\-\_\-speed@{d\-H\-Bridge\-\_\-set\-\_\-speed}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{d\-H\-Bridge\-\_\-set\-\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-set\-\_\-speed (
+\begin{DoxyParamCaption}
+\item[{uint8}]{left, }
+\item[{uint8}]{right}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8h_acd199ef860af11d724ef1ce8d9ebed53}
+Sets the duty cycle of the h\-Bridge pwms for the left and right side. There is a lot of strange math that the actual P\-W\-M call will make but for the caller just pass 0-\/255 as described in the struct. 
+\begin{DoxyParams}{Parameters}
+{\em left} & speed for the left motor \\
+\hline
+{\em right} & speed for the right motor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file d\-H\-Bridge.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{d_h_bridge_8h_a036e5e08e01e2cc8f7a700c3f91d36c2}{\index{d\-H\-Bridge.\-h@{d\-H\-Bridge.\-h}!bridge@{bridge}}
+\index{bridge@{bridge}!dHBridge.h@{d\-H\-Bridge.\-h}}
+\subsubsection[{bridge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf d\-H\-Bridge\-\_\-params} bridge}}\label{d_h_bridge_8h_a036e5e08e01e2cc8f7a700c3f91d36c2}
+
+
+There generally are not enough pins for 2 double H\-Bridges driven like this, as such I'm declaring the specs internal. Also this makes passing data back and forth easier. Maybe put in C file not sure. 
+
+
+
+Definition at line 11 of file d\-H\-Bridge.\-c.
+

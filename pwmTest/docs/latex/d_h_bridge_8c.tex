@@ -1,0 +1,109 @@
+\hypertarget{d_h_bridge_8c}{\section{driver/d\-H\-Bridge.c File Reference}
+\label{d_h_bridge_8c}\index{driver/d\-H\-Bridge.\-c@{driver/d\-H\-Bridge.\-c}}
+}
+{\ttfamily \#include \char`\"{}ets\-\_\-sys.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}osapi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}os\-\_\-type.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mem.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}user\-\_\-interface.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pwm.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gpio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}driver/d\-H\-Bridge.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8c_af5de3d05446f13654fbe63aba9ae09a5}{d\-H\-Bridge\-\_\-init} ()
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8c_a139f811884a6e2deefe2304ccf512d86}{d\-H\-Bridge\-\_\-set\-\_\-mode} (uint8 mode)
+\item 
+void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8c_acd199ef860af11d724ef1ce8d9ebed53}{d\-H\-Bridge\-\_\-set\-\_\-speed} (uint8 left, uint8 right)
+\item 
+\hyperlink{structd_h_bridge__params}{d\-H\-Bridge\-\_\-params} $\ast$I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R \hyperlink{d_h_bridge_8c_ab635bce01a77439b5f7b292c49532482}{d\-H\-Bridge\-\_\-get\-\_\-info} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structd_h_bridge__params}{d\-H\-Bridge\-\_\-params} \hyperlink{d_h_bridge_8c_a036e5e08e01e2cc8f7a700c3f91d36c2}{bridge} = \{0,0,0\}
+\begin{DoxyCompactList}\small\item\em There generally are not enough pins for 2 double H\-Bridges driven like this, as such I'm declaring the specs internal. Also this makes passing data back and forth easier. Maybe put in C file not sure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{d_h_bridge_8c_ab635bce01a77439b5f7b292c49532482}{\index{d\-H\-Bridge.\-c@{d\-H\-Bridge.\-c}!d\-H\-Bridge\-\_\-get\-\_\-info@{d\-H\-Bridge\-\_\-get\-\_\-info}}
+\index{d\-H\-Bridge\-\_\-get\-\_\-info@{d\-H\-Bridge\-\_\-get\-\_\-info}!dHBridge.c@{d\-H\-Bridge.\-c}}
+\subsubsection[{d\-H\-Bridge\-\_\-get\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf d\-H\-Bridge\-\_\-params}$\ast$ I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-get\-\_\-info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8c_ab635bce01a77439b5f7b292c49532482}
+Used to get the current operating state of the P\-W\-M's. \begin{DoxyReturn}{Returns}
+A pointer to the bridge struct so you can get all the values like the mode and speeds. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file d\-H\-Bridge.\-c.
+
+\hypertarget{d_h_bridge_8c_af5de3d05446f13654fbe63aba9ae09a5}{\index{d\-H\-Bridge.\-c@{d\-H\-Bridge.\-c}!d\-H\-Bridge\-\_\-init@{d\-H\-Bridge\-\_\-init}}
+\index{d\-H\-Bridge\-\_\-init@{d\-H\-Bridge\-\_\-init}!dHBridge.c@{d\-H\-Bridge.\-c}}
+\subsubsection[{d\-H\-Bridge\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8c_af5de3d05446f13654fbe63aba9ae09a5}
+Initalizes the pair of h\-Bridges. This will set the P\-W\-M's to 1k\-Hz with 0 duty cycle, it will also set the mode to be S\-T\-O\-P and update the bridge struct. \begin{DoxyWarning}{Warning}
+gpio\-\_\-init() should not be called before this function, or bad things might happen. 
+
+some functions in here say they can only be called once. I don't know what will happen if you try to disobey them. 
+\end{DoxyWarning}
+
+
+Definition at line 13 of file d\-H\-Bridge.\-c.
+
+\hypertarget{d_h_bridge_8c_a139f811884a6e2deefe2304ccf512d86}{\index{d\-H\-Bridge.\-c@{d\-H\-Bridge.\-c}!d\-H\-Bridge\-\_\-set\-\_\-mode@{d\-H\-Bridge\-\_\-set\-\_\-mode}}
+\index{d\-H\-Bridge\-\_\-set\-\_\-mode@{d\-H\-Bridge\-\_\-set\-\_\-mode}!dHBridge.c@{d\-H\-Bridge.\-c}}
+\subsubsection[{d\-H\-Bridge\-\_\-set\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-set\-\_\-mode (
+\begin{DoxyParamCaption}
+\item[{uint8}]{mode}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8c_a139f811884a6e2deefe2304ccf512d86}
+Sets the mode of the h\-Bridge between the ones defined in the struct. Updates all G\-P\-I\-O output and updates the bridge struct. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & This is the mode to be set. See source code for notes on what each means in my specific configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file d\-H\-Bridge.\-c.
+
+\hypertarget{d_h_bridge_8c_acd199ef860af11d724ef1ce8d9ebed53}{\index{d\-H\-Bridge.\-c@{d\-H\-Bridge.\-c}!d\-H\-Bridge\-\_\-set\-\_\-speed@{d\-H\-Bridge\-\_\-set\-\_\-speed}}
+\index{d\-H\-Bridge\-\_\-set\-\_\-speed@{d\-H\-Bridge\-\_\-set\-\_\-speed}!dHBridge.c@{d\-H\-Bridge.\-c}}
+\subsubsection[{d\-H\-Bridge\-\_\-set\-\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}void I\-C\-A\-C\-H\-E\-\_\-\-F\-L\-A\-S\-H\-\_\-\-A\-T\-T\-R d\-H\-Bridge\-\_\-set\-\_\-speed (
+\begin{DoxyParamCaption}
+\item[{uint8}]{left, }
+\item[{uint8}]{right}
+\end{DoxyParamCaption}
+)}}\label{d_h_bridge_8c_acd199ef860af11d724ef1ce8d9ebed53}
+Sets the duty cycle of the h\-Bridge pwms for the left and right side. There is a lot of strange math that the actual P\-W\-M call will make but for the caller just pass 0-\/255 as described in the struct. 
+\begin{DoxyParams}{Parameters}
+{\em left} & speed for the left motor \\
+\hline
+{\em right} & speed for the right motor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file d\-H\-Bridge.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{d_h_bridge_8c_a036e5e08e01e2cc8f7a700c3f91d36c2}{\index{d\-H\-Bridge.\-c@{d\-H\-Bridge.\-c}!bridge@{bridge}}
+\index{bridge@{bridge}!dHBridge.c@{d\-H\-Bridge.\-c}}
+\subsubsection[{bridge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf d\-H\-Bridge\-\_\-params} bridge = \{0,0,0\}}}\label{d_h_bridge_8c_a036e5e08e01e2cc8f7a700c3f91d36c2}
+
+
+There generally are not enough pins for 2 double H\-Bridges driven like this, as such I'm declaring the specs internal. Also this makes passing data back and forth easier. Maybe put in C file not sure. 
+
+
+
+Definition at line 11 of file d\-H\-Bridge.\-c.
+
